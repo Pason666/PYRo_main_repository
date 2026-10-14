@@ -54,7 +54,6 @@ target_sources(PYRo PRIVATE
         # --- Component ---
         Component/Motor/pyro_dji_motor_drv.cpp
         Component/Motor/pyro_dm_motor_drv.cpp
-        Component/Motor/pyro_cybergear_motor_drv.cpp
         Component/Motor/pyro_motor_base.cpp
         Component/Powermeter/pyro_powermeter.cpp
         Component/RC/pyro_dr16_rc_drv.cpp
@@ -69,6 +68,7 @@ target_sources(PYRo PRIVATE
         Component/SR/pyro_sr04_drv.cpp
         Component/SR/pyro_sr05_drv.cpp
         Component/SR/pyro_us100_drv.cpp
+        Component/warning/pyro_warning_drv.cpp
 
         # --- Debug ---
         Debug/Debug_task.cpp
@@ -79,6 +79,14 @@ target_sources(PYRo PRIVATE
         Device/BMI088/BMI088_driver.cpp
         Device/BMI088/BMI088_middleware.cpp
         Component/Referee/UI/pyro_ui_drv.cpp
+
+        Device/Buzzer/pyro_buzzer_drv.cpp
+        Device/Buzzer/pyro_buzzer_player.cpp
+        Device/Buzzer/pyro_buzzer_task.cpp
+
+        Device/WS2812/ws2812_driver.cpp
+        Device/WS2812/ws2812_middleware.cpp
+
 
 
 )
@@ -104,6 +112,8 @@ target_include_directories(PYRo PUBLIC
 
         # --- Device ---
         Device/BMI088
+        Device/Buzzer
+        Device/WS2812
 
         # --- Algorithm ---
         Algorithm/Common
@@ -113,7 +123,6 @@ target_include_directories(PYRo PUBLIC
         Algorithm/PD
         Algorithm/EKF
         Algorithm/KF
-        Algorithm/LESO
         Algorithm/CRC
         Algorithm/Powercontrol
         Algorithm/Navigation
@@ -130,6 +139,7 @@ target_include_directories(PYRo PUBLIC
         Component/Supercap
         Component/SR
         Component/Image
+        Component/warning
 
         # --- Module ---
         Module
